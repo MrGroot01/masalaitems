@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# ✅ Add these
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +25,5 @@ urlpatterns = [
     path('api/', include('myapp.urls')),
 ]
 
-# ✅ Add this line (for images)
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# ✅ ALWAYS serve media (IMPORTANT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
