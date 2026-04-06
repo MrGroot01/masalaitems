@@ -25,5 +25,5 @@ urlpatterns = [
     path('api/', include('myapp.urls')),
 ]
 
-# ✅ ALWAYS serve media (IMPORTANT)
+# ✅ ALWAYS serve media
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
